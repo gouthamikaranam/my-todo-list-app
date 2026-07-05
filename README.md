@@ -1,16 +1,33 @@
-# React + Vite
+# App name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+my-todo-list-app
 
-Currently, two official plugins are available:
+# Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+I have build this application to tract my to do list with the CTD React 26.3 course.
 
-## React Compiler
+# Installation instructions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Instructions Part 1: Repo Setup for the Todo App
 
-## Expanding the ESLint configuration
+> Create new public repo on GitHub
+> give it the name "todo-list" or something similar and description
+> do not add a .gitignore or a license
+> clone the repo to your local environment
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Instructions Part 2: Installation
+Scaffold Vite Using CLI
+
+> remain on main branch
+> Bootstrap a new project: "npx create-vite@latest --template react" .
+
+Note:
+
+If we run the command without any options (npm create vite@latest) this will start an interactive prompt in the terminal to help scaffold the Vite project. It will ask for a project name, a template to use, and then finally a template variant. Be careful to choose JavaScript, not JavaScript SWC. SWC (Speedy Web Compiler) is a faster bundler that can be used instead of the default one used by Vite but doesn't have the right options for our project. We will not be using TypeScript in this course so don't choose that either.
+
+> After any prompts, install the project dependencies using NPM: npm install
+
+# How to run the development server
+
+> Start the development server with the command: npm run dev
+> Open a browser and navigate to http://localhost:5173.
