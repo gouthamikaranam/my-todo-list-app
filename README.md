@@ -4,7 +4,7 @@ my-todo-list-app
 
 # Description
 
-I have build this application to tract my to do list with the CTD React 26.3 course.
+I have built this application to track my to do list with the CTD React 26.3 course.
 
 # Installation instructions
 
