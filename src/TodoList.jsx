@@ -5,11 +5,9 @@ function TodoList() {
     {id: 3, title: "code out app"},
 ]
     return (
-        <>
         <ul>
             {todoList.map(todo => <li key={todo.id}>{todo.title}</li>)}
         </ul>
-        </>
     );
 }
 
