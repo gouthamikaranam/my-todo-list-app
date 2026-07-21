@@ -11,13 +11,13 @@ import TodoList from "./TodoList.jsx";
 
 function App() {
 
-  const [todoList, setTodoList] = useState(todos);
+  const [todoList,] = useState(todos);
 
   return (
     <div>
       <h1>Todo List</h1>
       <TodoForm />
-      <TodoList todoList = {todoList} />
+      <TodoList todoList={todoList} />
     </div>
   );
 }
