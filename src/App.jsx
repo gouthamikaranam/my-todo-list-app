@@ -11,7 +11,7 @@ import TodoList from "./TodoList.jsx";
 
 function App() {
 
-  const [todoList,] = useState(todos);
+  const [todoList, setTodoList] = useState(todos);
 
   return (
     <div>
