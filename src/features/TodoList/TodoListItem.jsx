@@ -16,9 +16,9 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
         setIsEditing(false);
     };
 
-     const handleUpdate = (event) => {
-        if (!isEditing) return;
+    const handleUpdate = (event) => {
         event.preventDefault();
+        if (!isEditing) return;
         onUpdateTodo({ ...todo, title: workingTitle });
         setIsEditing(false);
     };
@@ -39,8 +39,7 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
                             Cancel
                         </button>
                         <button
-                            type="button"
-                            onClick={handleUpdate}
+                            type="submit"
                             disabled={!isValidTodoTitle(workingTitle)}
                         >
                             Update

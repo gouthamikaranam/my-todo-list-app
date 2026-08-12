@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import TodoForm from "./features/TodoForm.jsx";
+import TodoForm from "./features/TodoList/TodoForm/TodoForm.jsx";
 import TodoList from "./features/TodoList/TodoList.jsx";
 
 
@@ -30,7 +30,7 @@ function App() {
       }
       return todo;
     });
-  setTodoList(updatedTodos);
+    setTodoList(updatedTodos);
   }
 
   return (  
