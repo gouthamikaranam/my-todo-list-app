@@ -1,7 +1,6 @@
 import TodoListItem from "./TodoListItem.jsx";
 
 function TodoList({ todoList, onCompleteTodo, onUpdateTodo }) {
-  console.log(todoList);
   const filteredTodoList = todoList.filter((todo) => !todo.isCompleted);
   return (
     <>

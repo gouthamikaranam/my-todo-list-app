@@ -67,7 +67,7 @@ function TodosPage({ token }) {
       const taskFromServer = await response.json();
       
       setTodoList((prevTodoList) =>
-        prevTodoList.map((todo) => (todo.id !== taskFromServer.id ? todo: taskFromServer))
+        prevTodoList.map((todo) => (todo.id === newTodo.id ? taskFromServer : todo))
       );
     } catch (error) {
       setError(error.message);
