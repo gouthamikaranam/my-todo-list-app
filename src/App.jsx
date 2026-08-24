@@ -8,16 +8,24 @@ function App() {
   const [email, setEmail] = useState("");
   const [token, setToken] = useState("");
 
+  function handleLogOut() {
+    setToken("");
+    setEmail("");
+  }
+
   return (
     <>
-      <Header
-        email={email}
-        token={token}
-        onSetToken={setToken}
-        onSetEmail={setEmail}
-      />
+      <Header />
       {token ? (
-        <TodosPage token={token} />
+        <>
+          <p>
+            Logged in as {email}{" "}
+            <button type="button" onClick={handleLogOut}>
+              Log Out
+            </button>
+          </p>
+          <TodosPage token={token} />
+        </>
       ) : (
         <Logon onSetEmail={setEmail} onSetToken={setToken} />
       )}
