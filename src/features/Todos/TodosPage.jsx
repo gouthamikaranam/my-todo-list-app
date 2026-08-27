@@ -50,12 +50,17 @@ function TodosPage({ token }) {
         const isFilterOrSort =
           debouncedFilterTerm || sortBy !== 'createdAt' || sortDirection !== 'desc';
         
-        if (error.message === "unauthorized") {
-          setError("Your session has expired. Please log in again.");
-        } else if (isFilterOrSort) {
-          setFilterError(`Error filtering/sorting todos: ${error.message}`);
+        const message =
+          error.message === "unauthorized"
+            ? "Your session has expired. Please log in again."
+            : isFilterOrSort
+              ? `Error filtering/sorting todos: ${error.message}`
+              : `Error fetching todos: ${error.message}`;
+        
+        if (isFilterOrSort) {
+          setFilterError(message);
         } else {
-          setError(`Error fetching todos: ${error.message}`);
+          setError(message);
         }
       } finally {
         setIsTodoListLoading(false);
@@ -68,7 +73,7 @@ function TodosPage({ token }) {
   }, [token, sortBy, sortDirection, debouncedFilterTerm]);
 
   const invalidateCache = useCallback(() => {
-  console.log("Invalidating memo cache after todo mutation");
+  //console.log("Invalidating memo cache after todo mutation");
     setDataVersion((prev) => prev + 1);
   }, []);
 
