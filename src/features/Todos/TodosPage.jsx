@@ -47,10 +47,18 @@ function TodosPage({ token }) {
         setTodoList(data.tasks);
         setFilterError('');
       } catch (error) {
-        if (debouncedFilterTerm || sortBy !== 'createdAt' || sortDirection !== 'desc') {
-          setFilterError(`Error filtering/sorting todos: ${error.message}`);
-        } else {
-          setError(`Error fetching todos: ${error.message}`);
+        const isFilterOrSort =
+          debouncedFilterTerm || sortBy !== 'createdAt' || sortDirection !== 'desc';
+        
+        const message =
+          error.message === "unauthorized"
+            ? "Your session has expired. Please log in again."
+            : isFilterOrSort
+              ? `Error filtering/sorting todos: ${error.message}`
+              : `Error fetching todos: ${error.message}`;
+        
+        if (isFilterOrSort) {
+          setFilterError(message);
         }
       } finally {
         setIsTodoListLoading(false);
